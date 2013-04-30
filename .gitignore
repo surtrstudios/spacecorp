@@ -14,7 +14,15 @@ gen/
 
 # Local configuration file (sdk path, etc)
 local.properties
+.vagrant
 
 # Eclipse project files
 .classpath
 .project
+
+# Project Files
+*.sublime*
+
+# build Files 
+build
+*.dblite
