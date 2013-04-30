@@ -1,0 +1,30 @@
+
+{% for a in page.authors %}
+{% assign author = site.authors[a] %}
+{% if author %}
+<div>
+<h3>About Me</h3>
+<div>
+<img src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=40">
+<span class="author"><strong>{{ author.display_name }}</strong></span>
+</div>
+<div>
+<span><a href="mailto:{{ author.email }}">Email Me</a></span> |
+<span><a href="http://www.github.com/{{ author.github }}">Github Profile</a></span> |
+<span><a href="{{ author.website }}">Homepage</a></span>
+</div>
+<p>{{ author.about }}</p>
+</div>
+{% endif %}
+{% endfor %}
+
+<h3>Project Source</h3>
+<a href="https://github.com/surtrstudios">Git Hub Repository</a>
+
+<h3> Recent Posts</h3>
+
+<ul>
+	{% for post in site.posts limit: 5 %}
+		<li><a href="/{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>

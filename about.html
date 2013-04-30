@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1>About Us</h1>
+
+{% for author in site.authors %}
+<div>
+<img src="http://www.gravatar.com/avatar/{{ author[1].gravatar }}?s=40">
+<span class="author"><strong>{{ author[1].display_name }}</strong></span>
+<p>{{ author[1].about }}</p>
+</div>
+{% endfor %}
