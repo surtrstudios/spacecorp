@@ -1,0 +1,23 @@
+task compileAll(type:Exec) {
+	workingDir '.'
+
+	commandLine 'gcc', '-Iinclude', 'source/main.c', '-o', 'build/spacecorp'
+
+	standardOutput = new ByteArrayOutputStream()
+ 
+	ext.output = {
+		return standardOutput.toString()
+	}
+}
+
+compileAll.doFirst( {
+	new File("build").mkdir()
+})
+
+task all(dependsOn: compileAll) << {
+	println compileAll.output
+}
+
+task clean << {
+	new File("build").deleteDir()
+}

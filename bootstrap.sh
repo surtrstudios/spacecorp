@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install -y scons
+apt-get install -y scons 
