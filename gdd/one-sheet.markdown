@@ -50,5 +50,32 @@ installations. In the business mode they will seek investors (both AI and
 other players) and manage the finances of the corporation including acquiring 
 other corporations and managing staffing. 
 
+Game play will make use of several interfaces. The ship builder interface will
+be composed of a design surface and several toolboxes. Due to size constraints 
+the toolboxes will take up the full screen for component selection and then the 
+coponent will be dropped onto the design surface to be manuverd into its final
+resting place. Ships will be constructed and operated entirely in orbit. Shuttle
+and landing craft design may be implemented as a stretch goal. 
+
+The operations component of the game will be split into several views. The first 
+will be a station/colony view, in which the player adds or removes builds/modules
+and manages habitations, places of work and administration. The player will 
+select the location of the station/colony from a number of choices and will be 
+allocated space on, or above, the planetary body. Building architecture will be 
+customizable. 
+
+The second component of the operations gameplay will be orbital mapping and 
+interplanetary transit. Players will be presented with a zoomable map of the 
+solar system and will be asked to decide on an orbit for a specific vessel. 
+These orbits will make use of a realistic physics system. The player will "draw"
+orbits using multitouch to expand and contract elliptical paths which match the
+needs of the player. Orbital duration will be translated from game time to real
+time and ships will need to content with the threas of radiation, passenger 
+boredom, starvation, dehydration, and asphyxiation. Players will also need to 
+balance the risk of muscular atrophy against the benefits of astronaut 
+experience.
+
+**TODO: Elaborate on business feature set.**
+
 ## Unique Selling Points
 ## Competitive Products
