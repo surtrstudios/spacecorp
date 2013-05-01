@@ -21,3 +21,9 @@ local.properties
 
 # Project files 
 *.sublime*
+
+# Build Files
+.gradle
+*.dblite
+.vagrant
+build
