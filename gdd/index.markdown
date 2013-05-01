@@ -4,10 +4,10 @@ layout: default
 
 # Game Design Document
 
-### [One-Sheet](/gdd/one-sheet)
+### [One-Sheet](/spacecorp/gdd/one-sheet)
 
 A one page overview.
 
-### [Ten-Pager](/gdd/ten-pager)
+### [Ten-Pager](/spacecorp/gdd/ten-pager)
 
 A more in-depth overview.
