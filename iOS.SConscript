@@ -1,3 +1,4 @@
+#!/usr/bin/python
 Import(['sources', 'env'])
 
 # iOS environments 

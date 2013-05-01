@@ -10,7 +10,6 @@ env = Environment(CCFLAGS = ['-Iinclude'])
 (ios_all, ios_release, ios_debug) = SConscript('iOS.SConscript', ['sources', 'env'])
 
 # Clean Up 
-Clean(ios_all, 'build')
-Clean(android_all, 'build')
+Clean([android_all, ios_all], 'build')
 
 env.Alias('all', [ios_all, android_all])
