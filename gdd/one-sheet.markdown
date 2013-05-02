@@ -75,5 +75,9 @@ boredom, starvation, dehydration, and asphyxiation. Players will also need to
 balance the risk of muscular atrophy against the benefits of astronaut 
 experience.
 
+The business gameplay will allow players to acquire loans, companies, and land. 
+In order to expand they'll need to buy plots of land and rights to establish
+orbital installations. 
+
 ## Unique Selling Points
 ## Competitive Products
