@@ -11,9 +11,11 @@
 # generated files
 bin/
 gen/
+.gradle
 
 # Local configuration file (sdk path, etc)
 local.properties
+.vagrant
 
 # Eclipse project files
 .classpath
