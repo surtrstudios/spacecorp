@@ -30,8 +30,6 @@ class CompileAndroid extends Exec {
 		cmd.add('-o')
 		cmd.add(outputDirectory + outptuFile)
 
-		println cmd
-
 		commandLine cmd
 	}
 
