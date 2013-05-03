@@ -14,7 +14,7 @@ class CompileAndroid extends Exec {
 		outputDirectory = 'build/android-gcc-' + configuration +"/"
 		new File(outputDirectory).mkdirs()
 
-		cmd = ["gcc"]
+		def cmd = ["gcc"]
 
 		this.includes.each { include -> 
 			cmd.add('-I')
