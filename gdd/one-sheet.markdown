@@ -77,7 +77,14 @@ experience.
 
 The business gameplay will allow players to acquire loans, companies, and land. 
 In order to expand they'll need to buy plots of land and rights to establish
-orbital installations. 
+orbital installations. Players can rent or sell land and orbital rights to other
+players, at rates that each player mutually negotiates to. Players will also be 
+able to publicly list their corporations and publicly trade stock. 
 
 ## Unique Selling Points
+
+* Explore the solar system in ships that you design! 
+* Build interplanetary colonies and orbital stations!
+* Compete in the high stakes game of interplanetary corporate espionage! 
+
 ## Competitive Products
