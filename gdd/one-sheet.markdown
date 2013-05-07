@@ -35,11 +35,12 @@ and dominate your way into the history books.
 ## Gameplay Outline
 
 Players begin as the project manager for a struggling corporation attempting to 
-get establish a permanent settlement on the Moon. Their orbital presence and 
-shuttle business is secure but it's time to expand. However the project has hit 
+establish a permanent settlement on the Moon. Their orbital presence and 
+shuttle business is secure but it's time to expand. However, the project has hit 
 a snag and they need you an up and coming engineer, operations manager, or 
 concerned investor to get the project back on track. Design an interplanetary 
-vessel which will ferry personnel and cargo to and from LEO and the Moon. 
+vessel which will ferry personnel and cargo to and from low Earth orbit (LEO) 
+and the Moon. 
 
 Gameplay will consist of three distinct but interconnected mechanics: ship 
 design and modification, operations, and business. In the first players will 
