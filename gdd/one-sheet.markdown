@@ -88,3 +88,6 @@ able to publicly list their corporations and publicly trade stock.
 * Compete in the high stakes game of interplanetary corporate espionage! 
 
 ## Competitive Products
+
+* Clash of Clans
+* Star Traders 
