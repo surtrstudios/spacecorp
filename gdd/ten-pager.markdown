@@ -3,13 +3,24 @@ layout: default
 title: Ten-Pager
 ---
 
-# Page 1: Title Page
-## Title
-### Logo 
-## Platforms
-## Target Player
-## Target Rating
-## Ship Date
+# Space Corp
+### Logo (PLACE_HOLDER)
+### Platforms
+
+* Android
+* iOS 
+
+### Target Player
+
+Players aged between 15 and 40.
+
+### Target Rating
+
+E10 - T
+
+### Ship Date
+
+May 13, 2014
 
 # Page 2: Game Outline
 ## Story Summary
