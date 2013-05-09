@@ -55,5 +55,6 @@ task clean {
 
 task rebuild(dependsOn: [clean, all]) {
 	all.mustRunAfter clean
+	group = "Build"
 }
 
