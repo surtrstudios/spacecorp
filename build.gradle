@@ -1,5 +1,6 @@
 task init() {
 	description = "Initializes the development environment."
+	group = 'Initialize'
 } << {
 	def os = System.getProperty("os.name").toLowerCase()
 
@@ -21,6 +22,12 @@ task init() {
 		def proc = cmd.execute()
 		proc.waitFor()
 	}
+}
+
+task wrapper(type: Wrapper) {
+	description = 'Generates the gradle wrapper which ensures a consistent configuration for all users.'
+	group = 'Initialize'
+	gradleVersion = '1.6'
 }
 
 task all(dependsOn: ':android:all') {
@@ -49,3 +56,4 @@ task clean {
 task rebuild(dependsOn: [clean, all]) {
 	all.mustRunAfter clean
 }
+
