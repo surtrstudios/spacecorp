@@ -1,7 +1,11 @@
 task init() {
 	description = "Initializes the development environment."
 } << {
-	def cmd = "ln -s ./hooks/pre-commit.py ./.git/hooks/pre-commit"
+	def chmod = "chmod gua+x ./hooks/pre-commit.py"
+	def chmodProc = chmod.execute()
+	chmodProc.waitFor()
+
+	def cmd = "ln -s -f ../../hooks/pre-commit.py ./.git/hooks/pre-commit"
 	def proc = cmd.execute()
 	proc.waitFor()
 }
