@@ -1,3 +1,11 @@
+task init() {
+	description = "Initializes the development environment."
+} << {
+	def cmd = "ln -s ./hooks/pre-commit.py ./.git/hooks/pre-commit"
+	def proc = cmd.execute()
+	proc.waitFor()
+}
+
 task all(dependsOn: ':android:all') {
 	description = "Assemble and publish all configurations for all platforms."
 	group = "Build"
