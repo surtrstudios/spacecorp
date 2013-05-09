@@ -1,13 +1,26 @@
 task init() {
 	description = "Initializes the development environment."
 } << {
-	def chmod = "chmod gua+x ./hooks/pre-commit.py"
-	def chmodProc = chmod.execute()
-	chmodProc.waitFor()
+	def os = System.getProperty("os.name").toLowerCase()
 
-	def cmd = "ln -s -f ../../hooks/pre-commit.py ./.git/hooks/pre-commit"
-	def proc = cmd.execute()
-	proc.waitFor()
+	if (os.contains("windows")) {
+		println "Initializing windows environment."
+
+		def mklink = "cmd /C mklink /J .git\\hooks\\pre-commit hooks\\pre-commit.py"
+		println mklink
+		def mklinkProc = mklink.execute()
+		mklinkProc.waitFor()
+	} else {
+		println "Initializing unix environment."
+
+		def chmod = "chmod gua+x ./hooks/pre-commit.py"
+		def chmodProc = chmod.execute()
+		chmodProc.waitFor()
+
+		def cmd = "ln -s -f ../../hooks/pre-commit.py ./.git/hooks/pre-commit"
+		def proc = cmd.execute()
+		proc.waitFor()
+	}
 }
 
 task all(dependsOn: ':android:all') {
