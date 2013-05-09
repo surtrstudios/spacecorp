@@ -9,6 +9,8 @@ task init() {
 task all(dependsOn: ':android:all') {
 	description = "Assemble and publish all configurations for all platforms."
 	group = "Build"
+} << {
+	new File("build").mkdirs()
 }
 
 task debug(dependsOn: ':android:debug') {
