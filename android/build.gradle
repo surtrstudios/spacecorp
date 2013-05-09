@@ -1,0 +1,18 @@
+task debug {
+	description = 'Assembles and publishes the debug configuration for the Android platform.'
+	group = 'Android'
+} << {
+	println 'android-gcc-debug'
+}
+
+task release {
+	description = 'Assembles and publishes the release configuration for the Android platform.'
+	group = 'Android'
+} << {
+	println 'android-gcc-release'
+}
+
+task all(dependsOn: [debug, release]) {
+	description = 'Assembles and publishes all configurations for the Android platform.'
+	group = 'Android'
+}

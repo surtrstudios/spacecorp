@@ -1,92 +1,16 @@
-class CompileAndroid extends Exec {
-	def List<String> includes = ['include']
-	def String configuration = 'debug'
-	def List<String> defines = ['ANDROID']
-	def String outputDirectory = 'build/android-gcc-' + configuration + "/"
-	def String outptuFile = 'spacecorp'
-
-	public CompileAndroid() {
-		super()
-		this.setWorkingDir(".")
-	}
-
-	private void updateArgs() {
-		outputDirectory = 'build/android-gcc-' + configuration +"/"
-		new File(outputDirectory).mkdirs()
-
-		def cmd = ["gcc"]
-
-		this.includes.each { include -> 
-			cmd.add('-I')
-			cmd.add(include)
-		}
-
-		this.defines.each { define -> 
-			cmd.add('-D')
-			cmd.add(define)
-		}
-
-		cmd.add('source/main.c')
-		cmd.add('-o')
-		cmd.add(outputDirectory + outptuFile)
-
-		commandLine cmd
-	}
-
-	void includes(String... value) {
-		this.includes = value.toList()
-		this.updateArgs()
-	}
-
-	void setConfiguration(String value) {
-		this.configuration = value
-		this.updateArgs()
-	}
-
-	void defines(String... value) {
-		this.defines = value.toList()
-		this.updateArgs()
-	}
+task all(dependsOn: ':android:all') {
+	description = "Assemble and publish all configurations for all platforms."
+	group = "Build"
 }
 
-task compileAndroidDebug(type: CompileAndroid) {
-	includes 'include'
-	configuration'debug'
-	defines 'ANDROID', 'DEBUG'
-
-	standardOutput = new ByteArrayOutputStream()
-
-	ext.taskOutput = {
-		return standardOutput.toString()
-	}
+task debug(dependsOn: ':android:debug') {
+	description = "Assemble and publish the debug configuration for all platforms"
+	group = "Build"
 }
 
-task compileAndroidRelease(type: CompileAndroid) {
-	includes 'include'
-	configuration 'release'
-	defines 'ANDROID', 'RELEASE'
-
-	standardOutput = new ByteArrayOutputStream()
-
-	ext.taskOutput = {
-		return standardOutput.toString()
-	}
-}
-
-task android(dependsOn: [compileAndroidDebug, compileAndroidRelease]) {
-	description = 'Compiles all configurations for the android platform'
-}
-
-task compileAll(dependsOn: [compileAndroidDebug, compileAndroidRelease]) {
-	ext.taskOutput = {
-		compileAndroidDebug.taskOutput
-	}
-}
-
-task all(dependsOn: compileAll) {
-	description = 'Compiles for all platforms and configurations.'
-} << {
-	println compileAll.taskOutput
+task release(dependsOn: ':android:release') {
+	description = "Assemble and publish the release configuration for all platforms"
+	group = "Build"
 }
 
 task clean {

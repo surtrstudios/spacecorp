@@ -1,0 +1,18 @@
+task debug {
+	description = 'Compiles and publishes the debug configuration for the iOS platform.'
+	group = 'iOS'
+} << {
+	println 'ios-clang-debug'
+}
+
+task release {
+	description = 'Compiles and publishes the release configuration for the iOS platform.'
+	group = 'iOS'
+} << {
+	println 'ios-clang-release'
+}
+
+task all(dependsOn: [debug, release]) {
+	description = 'Compiles and publishes all configurations for the iOS platform.'
+	group = 'iOS'
+}
