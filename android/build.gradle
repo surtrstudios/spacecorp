@@ -15,9 +15,13 @@ android {
 }
 
 task populateSource(type: Copy) {
-	from '../src/main/cpp'
-	into './src/main/jni'
-}
+	from "${project.parent.projectDir}/src/main/cpp"
+	into "${project.projectDir}/src/main/jni"
+
+	doFirst {
+		new File("${project.projectDir}/src/main/jni").mkdirs()
+	}
+} 
 
 assembleDebug.dependsOn populateSource
 assembleRelease.dependsOn populateSource
@@ -37,4 +41,9 @@ task release(dependsOn: [assembleRelease]) {
 task all(dependsOn: [debug, release]) {
 	description = 'Assembles and publishes all configurations for the Android platform.'
 	group = 'Android'
+}
+
+clean << {
+	new File("${project.projectDir}/build").deleteDir()
+	new File("${project.projectDir}/src/main/jni").deleteDir()
 }

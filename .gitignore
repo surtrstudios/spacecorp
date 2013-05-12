@@ -28,3 +28,6 @@ local.properties
 build
 *.dblite
 .gradle
+
+# Temporary Files 
+jni
