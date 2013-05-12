@@ -1,15 +1,37 @@
-task debug {
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath 'com.android.tools.build:gradle:0.3'
+	}
+}
+
+apply plugin: 'android'
+
+android {
+	compileSdkVersion 17
+}
+
+task populateSource(type: Copy) {
+	from '../src/main/cpp'
+	into './src/main/jni'
+}
+
+assembleDebug.dependsOn populateSource
+assembleRelease.dependsOn populateSource
+
+task debug(dependsOn: [assembleDebug]) {
 	description = 'Assembles and publishes the debug configuration for the Android platform.'
 	group = 'Android'
 } << {
-	println 'android-gcc-debug'
 }
 
-task release {
+task release(dependsOn: [assembleRelease]) {
 	description = 'Assembles and publishes the release configuration for the Android platform.'
 	group = 'Android'
 } << {
-	println 'android-gcc-release'
 }
 
 task all(dependsOn: [debug, release]) {
