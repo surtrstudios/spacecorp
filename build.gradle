@@ -1,0 +1,45 @@
+task init() {
+	description = "Initializes the development environment."
+	group = 'Initialize'
+} << {
+	def os = System.getProperty("os.name").toLowerCase()
+
+	if (os.contains("windows")) {
+		println "Initializing windows environment."
+
+		def mklink = "cmd /C mklink /J .git\\hooks\\pre-commit hooks\\pre-commit.py"
+		println mklink
+		def mklinkProc = mklink.execute()
+		mklinkProc.waitFor()
+	} else {
+		println "Initializing unix environment."
+
+		def chmod = "chmod gua+x ./hooks/pre-commit.py"
+		def chmodProc = chmod.execute()
+		chmodProc.waitFor()
+
+		def cmd = "ln -s -f ../../hooks/pre-commit.py ./.git/hooks/pre-commit"
+		def proc = cmd.execute()
+		proc.waitFor()
+	}
+}
+
+task wrapper(type: Wrapper) {
+	description = 'Generates the gradle wrapper which ensures a consistent configuration for all users.'
+	group = 'Initialize'
+	gradleVersion = '1.6'
+}
+
+task rebuild(type: Exec) {
+	group = "Build"
+	description = 'Rebuilds the project by removing any existing artifacts.'
+
+	commandLine 'jekyll', 'build'
+
+	standardOutput = new ByteArrayOutputStream()
+
+	ext.output = {
+		return standardOutput.toString()
+	}
+}
+
