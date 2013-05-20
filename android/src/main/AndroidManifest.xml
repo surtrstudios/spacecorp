@@ -17,7 +17,7 @@
 
 			<!-- Tell NativeActivity the name of our .so -->
 			<meta-data android:name="android.app.lib_name"
-				android:value="native-activity" />
+				android:value="spacecorp" />
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<action android:name="android.intent.category.LAUNCHER" />
