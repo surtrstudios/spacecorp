@@ -30,4 +30,6 @@ build
 .gradle
 
 # Temporary Files 
+!Android.mk
+!Applicaiton.mk
 jni
